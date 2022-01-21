@@ -1,0 +1,207 @@
+/*api path*/
+{
+        web url: [https: //kenblog.grazia.tw/](https://kenblog.grazia.tw/)
+        1b85f4f3700b4f709382c64c1c16149f.png
+        ---
+
+        ## blog_list
+        取得部落格列表
+
+        method:GET
+        url:/api/web/blog/blog
+
+        var:
+        _method:GET
+
+        ---
+
+        ## blog_show
+        取得部落格資訊
+
+        method:GET
+        url:/api/web/blog/blog/{$id}
+
+        var:
+        _method:GET
+
+        ---
+
+        ## blog_type_list
+        取得部落格類型列表
+
+        method:GET
+        url:/api/web/blog/blog_type/select
+
+        var:
+        _method:GET
+
+        ---
+
+        ## banner_list(image)
+        https://kenblog.grazia.tw/api/web/website/image?_method=GET&id=2
+        取得廣告圖片列表
+
+        method:GET
+        url:/api/web/website/image
+
+        var:
+        _method:GET
+        id:id
+
+        ---
+
+        ## banner_list(text)
+        取得廣告文字列表
+
+        method:GET
+        url:/api/web/website/text
+
+        var:
+        _method:GET
+        id:id
+
+        ---
+
+        ## contact_create
+        新增聯絡我們資訊
+
+        method:POST
+        url:/api/web/contact/contact
+
+        var:
+        _method:POST
+        'challenge_key':challenge_key
+        'contact_user':contact_user
+        'contact_email':contact_email
+        'contact_phone':contact_phone
+        'contact_question':contact_question
+
+        ---
+
+        ## challenge_get
+        新增圖形驗證碼
+
+        method:POST
+        url:/api/web/challenge/challenge
+
+        admin url: [https: //kenblog.grazia.tw/admin/index](https://kenblog.grazia.tw/admin/index)
+
+        id:admin@mail.grazia.tw
+        pw: 0000
+}
+
+/*？？？*/
+{
+        var data_list = jQuery.parseJSON(sMsg.msg.original.lists);
+
+        function search(query)
+{
+    query.push({name: '_method', value: 'GET'});
+
+    url = '/api/admin/website/banner_content/index/{!! $bid !!}' ;
+
+    $.ajax({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        type: 'GET',
+        url: url,
+        dataType: 'json',
+        cache: false,
+        data: query,
+        success: function (sMsg){
+            console.log(sMsg);
+            setTimeout($.unblockUI, 500);
+            
+            tbody_list = '' ;
+            if(sMsg.code == '9999')
+            {
+                $('#pagination').html(sMsg.msg.original.pagination);
+                $('#search_total').html(sMsg.msg.original.count);
+
+                var data_list = jQuery.parseJSON(sMsg.msg.original.lists);
+
+                 // 分頁判斷
+                if(sMsg.msg.original.pagination == ''){
+                    data = data_list.data    
+                } else {
+                    data = data_list.data
+                }
+
+                if(sMsg.msg.original.count == 0)
+                {
+                    tbody_list = tbody_list+'<tr>';
+                    tbody_list = tbody_list+'<td colspan=\"13\">{!! __('inc.not_found') !!}</td>';
+                    tbody_list = tbody_list+'</tr>';
+                }
+                else
+                {
+                    jQuery.each(data, function(index, item) {
+
+                        tbody_list = tbody_list+'<tr>';
+                        tbody_list = tbody_list+'<td><a href=\"/admin/website/banner_content/update/'+item.banner_content_id+'\"><i class =\"fa fa-pencil fa-lg\"></i></a></td>';
+
+                        if(item.banner_content_image_dsp != '')
+                        {
+                            tbody_list = tbody_list+'<td><img src="'+item.banner_content_image_dsp+'" border="0" /></td>';
+                        }
+                        else
+                        {
+                            tbody_list = tbody_list+'<td></td>';
+                        }
+
+                        tbody_list = tbody_list+'<td>'+item.banner_content_id+'</td>';
+                        // tbody_list = tbody_list+'<td>'+item.banner_site_id+'</td>';
+                        tbody_list = tbody_list+'<td><a href="/admin/website/banner_content/show/'+item.banner_content_id+'">'+item.banner_title+'</a></td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_link_url+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_link_mode_dsp+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_sort+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_content+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_status_dsp+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_start_dsp+'</td>';
+                        tbody_list = tbody_list+'<td>'+item.banner_end_dsp+'</td>';
+
+                        tbody_list = tbody_list+'</tr>';
+                    });
+                }
+                
+               $('#tbody_list').html(tbody_list);
+
+            }
+            else
+            {
+                tbody_list = tbody_list+'<tr>';
+                tbody_list = tbody_list+'<td colspan=\"13\">{!! __('inc.not_found') !!}</td>';
+                tbody_list = tbody_list+'</tr>';
+
+                $('#tbody_list').html(tbody_list);
+
+                alert(sMsg.msg);
+            }
+
+        },
+        beforeSend:function(){
+             $.blockUI({ 
+                message: '<i class="fa fa-spinner fa-spin fa-5x fa-fw" style="color:black"></i>',
+                showOverlay: true, 
+                centerY: true,
+                css: {
+                    border: 'none',
+                    padding: '15px',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .6,
+                    color: '#fff'
+                },
+                overlayCSS:  { 
+                    backgroundColor:'#fff', 
+                    opacity:0, 
+                    cursor:'wait' 
+                },      
+            });
+        },
+        error: function (sMsg1, sMsg2){
+            //alert('error_search');
+            setTimeout($.unblockUI, 500);
+        }
+    });
+}
+}
