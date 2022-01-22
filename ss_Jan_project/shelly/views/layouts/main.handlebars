@@ -55,7 +55,7 @@
             <button class="contact-us">聯絡我<i class="icofont-long-arrow-right"></i></button>
             <button class="articles">看全部文章</button>
             <div class="horizon2"></div>
-            <button class="go-top onclick="topFunction()" id="myBtn" title="Go to top""><i class="icofont-long-arrow-right"></i></button>
+            <button class="go-top" id="backtoTop" onclick="scrollToTop();return false;"href="#"><i class="icofont-arrow-up"></i></button>
                 <ul class="socialMediaIcons">
                     <li class="icon i-fb"><a class="social-media-link" href="https://reurl.cc/mvWlYV"><i
                                 class="icofont lab la-facebook-f"></i></a></li>
@@ -72,7 +72,7 @@
         <footer class="footer-768">
             <div class="up">
                 <button class="articles">看全部文章</button>
-                <button class="go-top" onclick="topFunction()" id="myBtn" title="Go to top"><i class="icofont-long-arrow-right"></i></button>
+                <button class="go-top" id="backtoTop" onclick="scrollToTop();return false;"href="#"><i class="icofont-arrow-up"></i></button>
             </div>
             <div class="down">
                 <div class="down_1">
@@ -104,6 +104,7 @@
             crossorigin="anonymous"></script>
         <script src="/javascripts/index.js"></script>
 
+
         <script>
             document.querySelectorAll('button').forEach
                 (btn => {
@@ -133,24 +134,11 @@
                     location.href = "/"
                 }
             })
-
-            mybutton = document.querySelector("#myBtn");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {scrollFunction()};
-
-            function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
+            function scrollToTop(){
+                window.scrollTo({top: 0, behavior: 'smooth'});
             }
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-            }
+
         </script>
     </div>
 </body>

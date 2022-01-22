@@ -163,18 +163,6 @@
 
         color: #F7F7F7;
     }
-    .path-about {
-        width: 128px;
-        height: 40px;
-
-        font-family: Noto Sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 40px;
-
-        color: #F7F7F7;
-    }
 
 
     /*section 2*/
@@ -283,16 +271,23 @@
     section {
         max-width: 1440px;
     }
-
-
-
-
     /*section 1*/
 
     .banner-wrapper-about {
         width: 1440px;
         height: 284px;
     }
+    .banner-wrapper-about > .path-about {
+        /* border: 1px solid red; */
+        height: 40px;
+
+        font-family: Noto Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
     .p-3-1440-about {
         margin: 0 auto;
         margin-top: 61px;

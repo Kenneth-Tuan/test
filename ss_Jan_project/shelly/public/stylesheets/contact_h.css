@@ -1,7 +1,6 @@
-
-#a1-contact {
-    padding-top: 50px;
-}
+/* #a1-contact {
+    border: 1px solid red;
+} */
 
 
 .banner-wrapper-contact {
@@ -67,6 +66,8 @@
     border: 2px solid #637081;
     box-sizing: border-box;
     border-radius: 73px;
+    background-color: #fffbf0;
+
 }
 
 .input-name-contact, .input-phone-contact  {
@@ -89,6 +90,8 @@
     border: 2px solid #637081;
     box-sizing: border-box;
     border-radius: 30px;
+     background-color: #fffbf0;
+
 }
 
 .btn-send-contact {
@@ -113,6 +116,7 @@
 #a2-contact {
     /* border: 1px solid red; */
     margin-top: 40px;
+    padding-bottom: 159px;
 }
 
 
@@ -193,7 +197,8 @@
     border: none;
 }
 
-.back-to-frontPage-contact, .articleList-content-contact {
+.back-to-frontPage-content-contact, .articleList-content-contact {
+    /* border: red solid 1px; */
     font-family: Sriracha;
     font-style: normal;
     font-weight: normal;
@@ -212,7 +217,7 @@
     /*section 1*/
 
     #a1-contact {
-        padding-top: 100px;
+        /* padding-top: 100px; */
         padding-bottom: 0;
     }
     .banner-wrapper-contact {
@@ -308,6 +313,9 @@
     }
 
     .btn-send-contact {
+        width: 267px;
+        height: 66px;
+
         margin-top: 47px;
         margin-bottom: 197;
     }
@@ -333,7 +341,7 @@
     /*section 1*/
 
     #a1-contact {
-        padding-top: 120px;
+        /* padding-top: 120px; */
         padding-bottom: 0;
     }
     .banner-wrapper-contact {
@@ -373,7 +381,7 @@
         height: 452px;
         padding: 0;
     }
-    .articleList-contact, .back-to-frontPage {
+    .articleList-contact, .back-to-frontPage-contact {
         padding: 5px 0px;
     
         width: 178px;

@@ -1,10 +1,9 @@
-
-#a1-blog {
+/* #a1-article {
     padding-top: 50px;
-}
+} */
 
 /* banner */
-.banner-wrapper-blog {
+.banner-wrapper-article {
     margin: 0 auto;
     padding: 0 0 0 0;
     width: 375px;
@@ -18,7 +17,7 @@
     background: #748067;
 }
 
-.current-page-blog, .path-blog {
+.current-page-article, .path-article {
     margin: 0;
 
     font-family: Sriracha;
@@ -29,10 +28,10 @@
 
     color: #F7F7F7;
 }
-.article-path-blog {
+.article-path-article {
     margin-left: 20px;
     width: 339px;
-    height: 75px;
+    height: 25px;
     
     font-family: Sriracha;
     font-style: normal;
@@ -40,22 +39,33 @@
     font-size: 14px;
     line-height: 25px;
 
+    overflow: hidden;
+    word-break: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
     color: #898989;
 }
 
 
+#a2-article{
+    margin-top: 72px;
+}
+
 /* article */
-.article-wrapper-blog {
-    margin-top: 22px;
+.article-wrapper-article {
+    width: 372px;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
 }
-.article-title-blog {
+.article-title-article {
     width: 292px;
-    height: 100px;
+    /* height: 100px; */
     margin: 0;
     padding: 0;
 
@@ -66,12 +76,18 @@
     line-height: 50px;
 
     display: flex;
-    align-items: center;
+
+    /* overflow: hidden;
+    word-break: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; */
 
     color: #000000;
 }
 
-.article-detail-blog {
+.article-detail-article {
     margin-top: 5px;
     padding: 0;
     width: 292px;
@@ -82,13 +98,14 @@
     justify-content: flex-start;
     align-items: center;
 }
-.article-detail-blog > .avatar-blog {
+.article-detail-article > .avatar-article {
     margin-right: 8px;
     padding: 0;
     width: 50px;
     height: 50px;
+
 }
-.article-detail-blog > .title-blog {
+.article-detail-article > .title-article {
     margin-right: 8px;
     width: 118px;
     height: 22px;
@@ -103,7 +120,7 @@
     
     color: #000000;
 }
-.date-blog {
+.date-article {
     margin: 0;
     padding: 0;
 
@@ -118,12 +135,18 @@
     color: #000000;
 }
 
-.article-content-blog {
+.article-content-article {
     margin-top: 20px;
     align-items: center;
 }
+.article-img-article {
+    width: 292px;
+    height: 168px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-.content-blog {
+.content-article {
     width: 292px;
     margin-top: 23px;
 
@@ -139,7 +162,7 @@
 
 
 
-.horizon3-blog {
+.horizon3-article {
     margin: 15px;
     width: 335px;
     border-bottom: 1px black solid;
@@ -155,17 +178,20 @@
 
 
     /*section 1*/
-    #a1-blog {
-        padding-top: 100px;
+    #a1-article {
+        /* border: red solid 1px; */
+        margin-top: 0px;
     }
-    .banner-wrapper-blog {
+    .banner-wrapper-article {
         display: none;
     }
-    .horizon3-blog {
+    .horizon3-article {
+        /* border: 1px solid red; */
         padding-top: 28px;
+        margin-top: 0;
         width: 731px;
     }
-    .article-path-blog {
+    .article-path-article {
         margin: 8px 0 0 91px;
         width: 336px;
         height: 25px;
@@ -178,8 +204,16 @@
     
         color: #898989;
     }
-    .article-wrapper-blog {
+
+    #a2-article {
+        /* border: 1px red solid; */
+        padding-bottom: 37px;
+    }
+    .article-wrapper-article {
+        /* border: 1px red solid; */
+
         margin: 70px auto 0 ;
+
         width: 503px;
 
         display: flex;
@@ -187,35 +221,28 @@
         justify-content: flex-start;
         align-items: flex-start;
     }
-    .article-info-blog {
-        width: 590px;
+    .article-info-article {
+        width: 503px;
     }
-    .article-title-blog {
-        width: 590px;
-        height: 50px;
-
-        font-family: Kaushan Script;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 30px;
-        line-height: 50px;
-
-        display: flex;
-        align-items: center;
-
-        color: #000000;
+    .article-title-article {
+        /* border: solid red 1px; */
+        width: 503px;
     }
-    .article-content-blog {
+    
+    .article-content-article {
+        /* border: solid red 1px; */
+        margin-top: 20px;
+
         width: 503px; 
     }
-    .article-img-blog > img {
+    .article-img-article {
+        /* border: solid red 1px; */
         width: 503px;
         height: 286px;
     }
-    .content-blog {
+    .content-article {
         width: 503px;
-        left: 0px;
-        top: 306px;
+        margin-top: 20px;
 
         font-family: Noto Sans;
         font-style: normal;
@@ -235,26 +262,38 @@
 
 
         /*section 1*/
-    #a1-blog {
+    /* #a1-article {
         padding-top: 120px;
-    }
-    .horizon3-blog {
+    } */
+    .horizon3-article {
         width: 1140px;
         padding-top: 45px;
     }
-    .article-path-blog {
+    .article-path-article {
         margin: 8px 0 0 166px;
         width: 475px;
         height: 40px;
     }
-    .article-wrapper-blog {
-        margin: 74px auto 0;
+
+    /*section 2*/
+    #a2-article {
+        /* border: solid red 1px; */
+        margin-top: 74px;
+        margin-bottom: 0;
+        padding-bottom: 89px;
+    }
+    .article-wrapper-article {
+        /* border: solid red 1px; */
+
+        margin:0 auto;
         padding: 40px;
         width: 1033px;
     }
-    .article-title-blog {
+    .article-title-article {
+        /* border: solid red 1px; */
+
         width: 937px;
-        height: 54px;
+        /* height: 54px; */
 
         font-family: Noto Sans;
         font-style: normal;
@@ -266,15 +305,17 @@
 
         color: #000000;
     }
-    .article-content-blog {
+    .article-content-article {
+        /* border: solid red 1px; */
+
         width: 953px;
-        height: 944px; 
+        /* height: 944px;  */
     }
-    .article-img-blog > img {
+    .article-img-article {
         width: 953px;
         height: 521px;
     }
-    .content-blog {
+    .content-article {
         width: 953px;
 
         font-family: Noto Sans;
@@ -285,7 +326,7 @@
 
         color: #000000;
     }
-    .horizon3-blog {
+    .horizon3-article {
         margin-left: 150px;
     }
 }
