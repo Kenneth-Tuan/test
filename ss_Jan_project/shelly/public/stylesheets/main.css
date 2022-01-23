@@ -232,6 +232,17 @@ footer > .icofont {
 }
 footer > p {
   margin: 0 auto 56px;
+  
+  width: 259px;
+  height: 21px;
+
+  font-family: Sriracha;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 21px;
+
+  color: #542344;
 }
 
 .horizon1 {
@@ -353,9 +364,9 @@ footer > p {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* .articles {
+  .articles {
     margin: 2px 175px 0 231px;
-  } */
+  }
   .go-top {
     width: 46px;
     height: 46px;

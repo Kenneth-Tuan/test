@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const axios = require('axios')
+const bodyParser = require('body-parser')
 // const routes = require('./routes')
 
 require('./config/mongoose')
@@ -16,6 +17,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(routes)
 
 
@@ -30,57 +32,6 @@ let blogTypeList = []
 const blogList = []
 
 init()
-
-// let blog = 
-// {
-//   blog_id : 0,
-//   blog_type : '',
-//   blog_title : '',
-//   blog_content : '',
-//   blog_img : '',
-//   blog_online_date : '',
-//   blog_show : 0,
-//   blog_top : 0,
-  // blog_content2: '',
-  // blog_content3: '',
-  // blog_content4: '',
-  // blog_content5: '',
-  // blog_content6: '',
-  // blog_content7: '',
-  // blog_content8: '',
-  // blog_content9: '',
-  // blog_content10: '',
-  // blog_content11: '',
-  // blog_content12: '',
-  // blog_content13: '',
-  // blog_content14: '',
-  // blog_content15: '',
-  // blog_content16: '',
-  // blog_content17: '',
-  // blog_content18: '',
-  // blog_content19: '',
-  // blog_content20: '',
-  // blog_image2: '',
-  // blog_image3: '',
-  // blog_image4: '',
-  // blog_image5: '',
-  // blog_image6: '',
-  // blog_image7: '',
-  // blog_image8: '',
-  // blog_image9: '',
-  // blog_image10: '',
-  // blog_image11: '',
-  // blog_image12: '',
-  // blog_image13: '',
-  // blog_image14: '',
-  // blog_image15: '',
-  // blog_image16: '',
-  // blog_image17: '',
-  // blog_image18: '',
-  // blog_image19: '',
-  // blog_image20: '',
-// }
-
 
 // routes setting
 app.get('/', (req, res) => {
@@ -120,78 +71,40 @@ app.get('/:id', (req, res) => {
 
   })
 })
+app.post('/contact', (req, res) => {
+  const contact_user = req.body.name
+  const contact_email = req.body.email;
+  const contact_phone = req.body.phone;
+  const contact_question = req.body.question;
 
-// app.get('/:article_id', (req, res) => {
-//   blog = 
-// {
-//   blog_id : 0,
-//   blog_type : '',
-//   blog_title : '',
-//   blog_content : '',
-//   blog_img : '',
-//   blog_online_date : '',
-//   blog_show : 0,
-//   blog_top : 0,
-  // blog_content2: '',
-  // blog_content3: '',
-  // blog_content4: '',
-  // blog_content5: '',
-  // blog_content6: '',
-  // blog_content7: '',
-  // blog_content8: '',
-  // blog_content9: '',
-  // blog_content10: '',
-  // blog_content11: '',
-  // blog_content12: '',
-  // blog_content13: '',
-  // blog_content14: '',
-  // blog_content15: '',
-  // blog_content16: '',
-  // blog_content17: '',
-  // blog_content18: '',
-  // blog_content19: '',
-  // blog_content20: '',
-  // blog_image2: '',
-  // blog_image3: '',
-  // blog_image4: '',
-  // blog_image5: '',
-  // blog_image6: '',
-  // blog_image7: '',
-  // blog_image8: '',
-  // blog_image9: '',
-  // blog_image10: '',
-  // blog_image11: '',
-  // blog_image12: '',
-  // blog_image13: '',
-  // blog_image14: '',
-  // blog_image15: '',
-  // blog_image16: '',
-  // blog_image17: '',
-  // blog_image18: '',
-  // blog_image19: '',
-  // blog_image20: '',
-// }
-//   let id = req.params.article_id
-//   console.log(id)
-//   article = blogList.find(ele => ele.blog_id = id)
-//   console.log(article)
-//   console.log(article.blog_title)
-//   console.log(article.blog_online_date)
-//   console.log(article.blog_img)
-//   console.log(article.blog_content)
+  let data = {
+    'contact_user':contact_user,
+    'contact_email':contact_email,
+    'contact_phone':contact_phone,
+    'contact_question':contact_question
+  }
 
+  let headers = {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      // "Authorization": ``,
+  };
 
-//   res.render('article', { blog_title: article.blog_title,
-//                           blog_date: article.blog_online_date,
-//                           blog_image1: article.blog_img,
-//                           blog_content1 : article.blog_content
-//   })
-// })
+  axios({
+      method: 'post',
+      url: `https://kenblog.grazia.tw/api/web/contact/contact`,
+      data: data,
+      headers: headers
+  })
+      .then( (response) => console.log(response))
+      .catch( (error) => console.log(error))
+})
 
 // start and listen on the Express server
 app.listen(PORT, () => {
   console.log(`APP is listening on localhost:${PORT}`)
 })
+
 
 /* function */
 
@@ -236,13 +149,11 @@ function theTopBlog () {
 function showBlogs (blogType, arr) {
   arr = sortBLogNum(sortBlogType(blogType, arr))
   let blogs = []
-    // if (arr.some(ele => ele.blog_show === 1)) {
       arr.forEach(item => {
-        if(item.blog_show_index_tag === 1) {
+        if(item.blog_show_index_tag === 1 && item.blog_top_index_tag === 0) {
           blogs.push(item)
         }
       })
-  // }
   return blogs
 }
 
@@ -265,134 +176,8 @@ async function init() {
   blogList.sort(function (a, b) {
     return b.blog_id - a.blog_id
   })
-  // console.log(Array.from(blogList))
   return blogList
 }
-
-// axios
-//   .get(BLOG_LIST) //取得部落格列表
-//   .then((response) => {
-//     let arr= []
-//     arr.push(...response.data.msg.original.lists.data)
-//     arr.forEach(item => {
-//       blog.blog_id = item.blog_id
-//       blog.blog_title = item.blog_title
-//       blog.blog_content = item.blog_content1
-//       blog.blog_type = item.blog_type_title
-//       blog.blog_online_date = item.blog_online_dsp
-//       blog.blog_img = item.blog_image1_dsp
-//       blog.blog_show = item.blog_show_index_tag
-//       blog.blog_top = item.blog_top_index_tag
-//       blog.blog_content2 = item.blog_content2,
-//       blog.blog_content3 = item.blog_content3,
-//       blog.blog_content4 = item.blog_content4,
-//       blog.blog_content5 = item.blog_content5,
-//       blog.blog_content6 = item.blog_content6,
-//       blog.blog_content7 = item.blog_content7,
-//       blog.blog_content8 = item.blog_content8,
-//       blog.blog_content9 = item.blog_content9,
-//       blog.blog_content10 = item.blog_content10,
-//       blog.blog_content11 = item.blog_content11,
-//       blog.blog_content12 = item.blog_content12,
-//       blog.blog_content13 = item.blog_content13,
-//       blog.blog_content14 = item.blog_content14,
-//       blog.blog_content15 = item.blog_content15,
-//       blog.blog_content16 = item.blog_content16,
-//       blog.blog_content17 = item.blog_content17,
-//       blog.blog_content18 = item.blog_content18,
-//       blog.blog_content19 = item.blog_content19,
-//       blog.blog_content20 = item.blog_content20,
-//       blog.blog_image2 = item.blog_image2_dsp,
-//       blog.blog_image3 = item.blog_image3_dsp,
-//       blog.blog_image4 = item.blog_image4_dsp,
-//       blog.blog_image5 = item.blog_image5_dsp,
-//       blog.blog_image6 = item.blog_image6_dsp,
-//       blog.blog_image7 = item.blog_image7_dsp,
-//       blog.blog_image8 = item.blog_image8_dsp,
-//       blog.blog_image9 = item.blog_image9_dsp,
-//       blog.blog_image10 = item.blog_image10_dsp,
-//       blog.blog_image11 = item.blog_image11_dsp,
-//       blog.blog_image12 = item.blog_image12_dsp,
-//       blog.blog_image13 = item.blog_image13_dsp,
-//       blog.blog_image14 = item.blog_image14_dsp,
-//       blog.blog_image15 = item.blog_image15_dsp,
-//       blog.blog_image16 = item.blog_image16_dsp,
-//       blog.blog_image17 = item.blog_image17_dsp,
-//       blog.blog_image18 = item.blog_image18_dsp,
-//       blog.blog_image19 = item.blog_image19_dsp,
-//       blog.blog_image20 = item.blog_image20_dsp,
-//       // console.log(blog)
-//       blogList.push(blog)
-//       blog = 
-//       {
-//         blog_id : 0,
-//         blog_type : '',
-//         blog_title : '',
-//         blog_content : '',
-//         blog_img : '',
-//         blog_online_date : '',
-//         blog_show : 0,
-//         blog_top : 0,
-//         blog_content2: '',
-//         blog_content3: '',
-//         blog_content4: '',
-//         blog_content5: '',
-//         blog_content6: '',
-//         blog_content7: '',
-//         blog_content8: '',
-//         blog_content9: '',
-//         blog_content10: '',
-//         blog_content11: '',
-//         blog_content12: '',
-//         blog_content13: '',
-//         blog_content14: '',
-//         blog_content15: '',
-//         blog_content16: '',
-//         blog_content17: '',
-//         blog_content18: '',
-//         blog_content19: '',
-//         blog_content20: '',
-//         blog_image2: '',
-//         blog_image3: '',
-//         blog_image4: '',
-//         blog_image5: '',
-//         blog_image6: '',
-//         blog_image7: '',
-//         blog_image8: '',
-//         blog_image9: '',
-//         blog_image10: '',
-//         blog_image11: '',
-//         blog_image12: '',
-//         blog_image13: '',
-//         blog_image14: '',
-//         blog_image15: '',
-//         blog_image16: '',
-//         blog_image17: '',
-//         blog_image18: '',
-//         blog_image19: '',
-//         blog_image20: '',
-      // }
-    // })
-    // console.log('=====================')
-    // console.log(blogList)
-    // console.log(sortBLogNum(sortBlogType(blogTypeList[1], blogList), 1, 1))
-    // console.log(theTopBlog())
-    // blogList.sort(function (a, b) {
-    //   return b.blog_id - a.blog_id
-    // })
-    // console.log(blogList) 
-
-  // })
-  // .catch((err) => console.log(err))
-
-
-// axios //取得部落格資訊
-//   .get(BASE_URL + 'api/web/blog/blog/' + '2' + '?_method:GET')
-//   .then((response) => {
-//     // console.log(response.data.data.original.data)
-//     // console.log('=====================')
-//   })
-//   .catch((err) => console.log(err))
 
 axios //取得部落格類型列表
   .get(BLOG_TYPE_LIST)
@@ -404,6 +189,12 @@ axios //取得部落格類型列表
     // console.log('=====================')
   })  
   .catch((err) => console.log(err))
+
+axios
+  .get(BLOG_LIST)
+  .then((res) => {
+    console.log(res)
+  })
 
 
 

@@ -30,7 +30,7 @@
     color: #F7F7F7;
 }
 
-.p5-s2-contact {
+.p5-s2-contact > form {
     /* border: 1px solid red; */
     display: flex;
     flex-flow: column nowrap;
@@ -70,18 +70,7 @@
 
 }
 
-.input-name-contact, .input-phone-contact  {
-    margin-bottom: 15px;
-}
 
-.input-email-contact {
-    margin-bottom: 28px;
-}
-
-.input-question-contact {
-    margin-bottom: 15px;
-
-}
 
 .input-question-contact {
     width: 300px;
@@ -90,11 +79,12 @@
     border: 2px solid #637081;
     box-sizing: border-box;
     border-radius: 30px;
-     background-color: #fffbf0;
+    background-color: #fffbf0;
 
 }
 
 .btn-send-contact {
+    /* margin: 0 auto; */
     width: 150px;
     height: 46px;
 
@@ -208,6 +198,39 @@
     color: #F7F7F7;
 }
 
+.form-input-name-contact, .form-input-email-contact, .form-input-phone-contact, .form-input-question-contact {
+    /* border: solid red 1px; */
+    width: 300px;
+    margin-bottom: 15px;
+    /* height: 130px; */
+}
+.form-input-email-contact {
+    margin-bottom: 28px;
+}
+
+.form-input-name-contact .alert, .form-input-email-contact .alert, .form-input-phone-contact .alert, .form-input-question-contact .alert {
+    /* border: solid red 1px; */
+
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    /* height: 32px; */
+
+    text-align: right;
+    display: none;
+
+}
+.alert span {
+    font-family: Sriracha;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+
+    color: #E77474;
+
+}
+
 /* rwd */
 @media screen and (min-width: 768px) {
     section {
@@ -257,25 +280,25 @@
     .form-input-name-contact {
         /* border: 1px solid red; */
         width: 617px;
-        height: 130px;
+        /* height: 130px; */
     }
     .form-input-email-contact {
         /* border: 1px solid red; */
         margin-top: 26px;
         width: 617px;
-        height: 119px;
+        /* height: 119px; */
     }
     .form-input-phone-contact {
         /* border: 1px solid red; */
         margin-top: 31px;
         width: 617px;
-        height: 129px;
+        /* height: 129px; */
     }
     .form-input-question-contact {
         /* border: 1px solid red; */
         margin-top: 25px;
         width: 617px;
-        height: 283px;
+        /* height: 283px; */
     }
 
     .name-contact, .phone-contact, .question-contact {
@@ -312,12 +335,13 @@
         border-radius: 30px;
     }
 
-    .btn-send-contact {
+    .p5-s2-contact > form > .btn-send-contact {
         width: 267px;
         height: 66px;
 
         margin-top: 47px;
         margin-bottom: 197;
+        /* margin: 47px auto 197px; */
     }
 
 
@@ -329,6 +353,17 @@
     
         background: #FFFFFF;
         border-radius: 30px;
+    }
+
+    .form-input-name-contact .alert, .form-input-email-contact .alert, .form-input-phone-contact .alert, .form-input-question-contact .alert {
+        width: 617px;
+    }
+    .alert span {
+        font-family: Kaushan Script;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 50px;
     }
 
 }

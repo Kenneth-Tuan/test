@@ -11,26 +11,38 @@
 
         <section id="a2-contact">
                 <div class="p5-s2-contact">
-                    <div class="form-input-name-contact">
-                        <h3 class="name-contact" for="input-name-contact">姓名*</h3>
-                        <input type="text" class="input-name-contact" placeholder="Name">
-                    </div>
-                    <div class="form-input-email-contact">
-                        <h3 class="email-contact" for="input-email-contact">Email*</h3>
-                        <input type="email" class="input-email-contact" placeholder="Email">
-                    </div>
-                    <div class="form-input-phone-contact">
-                        <h3 class="phone-contact" for="input-phone-contact">電話*</h3>
-                        <input type="number" class="input-phone-contact" placeholder="Phone">
-                    </div>
-                    <div class="form-input-question-contact">
-                        <h3 class="question-contact" for="input-question-contact">洽詢内容*</h3>
-                        <input type="text" class="input-question-contact" placeholder="Your message here...">
-                    </div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn-send-contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <h3 class="send-contact">送出<i class="icofont-paper-plane"></i></h3>
-                    </button>                    
+                    <form action="/contact" class="" method="POST">
+                        <div class="form-input-name-contact">
+                            <h3 class="name-contact" for="input-name-contact">姓名*</h3>
+                            <input type="text" name="name" value="" class="input-name-contact" placeholder="Name">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-email-contact">
+                            <h3 class="email-contact" for="input-email-contact">Email*</h3>
+                            <input type="email" name="email" value="" class="input-email-contact" placeholder="Email">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-phone-contact">
+                            <h3 class="phone-contact" for="input-phone-contact">電話*</h3>
+                            <input type="number" name="phone" value="" class="input-phone-contact" placeholder="Phone">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-question-contact">
+                            <h3 class="question-contact" for="input-question-contact">洽詢内容*</h3>
+                            <input type="text" name="question" value="" class="input-question-contact" placeholder="Your message here...">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="submit" class="btn-send-contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <h3 class="send-contact">送出<i class="icofont-paper-plane"></i></h3>
+                        </button>                            
+                    </form>
+
+            
                 </div>
         </section>
                 <!-- Modal -->
@@ -46,3 +58,5 @@
                 </div>
             </div>
         </div>
+
+        <script src="/javascripts/contact.js"></script>
