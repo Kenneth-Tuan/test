@@ -88,7 +88,7 @@
     background-color: #B9BBA2;
 }
 .card-detail-blogList {
-    margin: 0;
+    margin-top: 21px;
     padding: 0;
     display: flex;
     flex-flow: row nowrap;
@@ -151,7 +151,9 @@
     padding-bottom: 186px;
 }
 
-
+.card-tag-blogList {
+    display: none;
+}
 
 
 

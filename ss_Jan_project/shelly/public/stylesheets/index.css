@@ -225,20 +225,17 @@
 
 .card-text-index {
     /* border: solid red 1px; */
-
-    margin-top: 21px;
+    /* margin-top: 21px; */
     padding: 0;
 
     width: 300px;
-    height: 182px;
+    /* height: 182px; */
 
     background-color: #FFFBF0; 
 }
 .card-tag-index {
     width: 150px;
     height: 25px;
-    left: 0px;
-    top: 0px;
     
     /* mono/mono/green_002 */
     
@@ -359,6 +356,10 @@
     background: #536B78;
 }
 
+/*取消tag功能*/
+.banner-tag-index, .card-tag-index {
+    display:none;
+}
 
 
 

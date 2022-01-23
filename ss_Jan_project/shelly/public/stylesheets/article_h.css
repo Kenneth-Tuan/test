@@ -169,6 +169,9 @@
     border-bottom: 1px black solid;
 }
 
+.banner-wrapper-index > a > .mian-banner-index > .banner-tag-index {
+    display:none;
+}
 
 
 /* rwd */
