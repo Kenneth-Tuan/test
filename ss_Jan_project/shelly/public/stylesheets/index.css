@@ -50,11 +50,12 @@
     border-radius: 18.5px;
     background-color: #B9BBA2;
     color: #392627;
+
 }
 
 .banner-title-index {
     /* border: 1px red solid; */
-    margin: 20px 0 0 0;
+    margin-top: 20px;
     width: 200px;
     height: 40px;   
 
@@ -420,6 +421,9 @@
         /* border: red solid 1px; */
         margin-left: 25px;
     }
+    .banner-title-index {
+        margin-top: 221px;
+    }
 
 
     .sub-banner-index {
@@ -646,7 +650,7 @@
         margin-left: 40.21px;
     }
     .banner-title-index {
-        margin-top: 20px;
+        margin-top: 363px;
         width: 400px;
         height: 54px;
 
