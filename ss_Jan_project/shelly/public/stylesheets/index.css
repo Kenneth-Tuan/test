@@ -1,4 +1,4 @@
-.banner-wrapper-index > a {
+.banner-wrapper-index > a, .change-index > a {
     text-decoration: none;
 }
 
@@ -270,7 +270,7 @@
     /* border: solid red 1px; */
     margin-top: 10px;
     padding: 0;
-    width: 296px;
+    /* width: 296px; */
     height: 50px;
 
     display: flex;
@@ -285,18 +285,18 @@
 }
 .card-detail-index > .title-index {
     /* border: solid red 1px; */
-    margin: 0 8px 0 0;
+    margin: 0;
     padding: 0;
-    width: 118px;
-    height: 22px;
+    margin-right: 8px;
+
+    /* width: 118px; */
+    /* height: 50px; */
 
     font-family: Philosopher;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
+    line-height: 50px;
 
     color: #000000;
 }
@@ -304,16 +304,14 @@
     /* border: solid red 1px; */
     margin: 0;
     padding: 0;
-    width: 105px;
-    height: 22px;
+    /* width: 105px; */
+    /* height: 50px; */
 
     font-family: Philosopher;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
+    line-height: 50px;
 
     color: #000000;
 }
@@ -575,18 +573,12 @@
         width: 50px;
         height: 50px;
     }
-    .card-detail-index > .title, .card-date-index {
+    .card-detail-index >  .card-date-index {
         /* border: red solid 1px; */
         font-family: Noto Sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 20px;
     }
     .card-detail-index > .title-index {
-        
-        width: 120px;
-        height: 20px;
+        font-family: Noto Sans;
     }
     .card-content-index {
         display: none;
@@ -817,7 +809,8 @@
         justify-content: flex-end;
         align-items: start;
     }
-    .card-n-1440-index > .card-text-index > .change-index > .card-title-index {
+    .card-n-1440-index > .card-text-index > .change-index > a > .card-title-index {
+        /* border: 1px solid red; */
         margin-top: 10px;
         width: 625px;
         height: 108px;
@@ -916,7 +909,7 @@
 
         color: #392627;
     }
-    .p1-1440-aside-index > .card-n-index > .card-text-index > .change-index > .card-title-index {
+    .p1-1440-aside-index > .card-n-index > .card-text-index > .change-index > a > .card-title-index {
         /* border: 1px red solid; */
         margin-top: 10px;
         margin-bottom: 0px;
@@ -948,7 +941,7 @@
     .p1-1440-aside-index > .card-n-index > .card-text-index > .change-index > .card-detail-index > .title-index {
         /* border: 1px red solid; */
         margin-right: 8px;
-        width: 118px;
+        /* width: 118px; */
         height: 22px;
 
         font-family: Philosopher;
@@ -963,7 +956,7 @@
     }
     .p1-1440-aside-index > .card-n-index > .card-text-index > .change-index > .card-detail-index > .card-date-index {
         /* border: solid red 1px; */
-        width: 105px;
+        /* width: 105px; */
         height: 22px;
 
         font-family: Philosopher;
@@ -1038,7 +1031,7 @@
     .wcs-wrapper-index > .change-index > .card-n-index > .card-text-index > .change-index > .card-detail-index {
         margin-top: 10px;
     }
-    .wcs-wrapper-index > .change-index > .card-n-index > .card-text-index > .change-index > .card-title-index {
+    .wcs-wrapper-index > .change-index > .card-n-index > .card-text-index > .change-index > a > .card-title-index {
         /* border: red solid 1px; */
         width: 482px;
         height: 82px;

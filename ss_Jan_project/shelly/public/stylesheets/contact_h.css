@@ -1,12 +1,14 @@
-/* #a1-contact {
-    border: 1px solid red;
-} */
+#a1-contact {
+    /* border: 1px solid red; */
+    width: 100vw;
+    margin: 0;
+}
 
 
 .banner-wrapper-contact {
     /* border: 1px solid red; */
 
-    width: 375px;
+    width: 100vw;
     height: 106px;
 
     display: flex;
@@ -98,7 +100,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 46px;
 
     color: #FFFFFF;
 }
@@ -244,7 +246,7 @@
         padding-bottom: 0;
     }
     .banner-wrapper-contact {
-        width: 768px;
+        width: 100vw;
         height: 204px;
     }
     .current-page-contact {
@@ -343,6 +345,9 @@
         margin-bottom: 197;
         /* margin: 47px auto 197px; */
     }
+    .send-contact {
+        line-height: 66px;
+    }
 
 
     #modal {
@@ -381,7 +386,7 @@
     }
     .banner-wrapper-contact {
         margin: 0 auto;
-        width: 1440px;
+        width: 100vw;
         height: 284px;
     }
     .current-page-contact {

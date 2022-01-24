@@ -45,6 +45,12 @@ app.get('/', (req, res) => {
                         s3_blog_2: sortBLogNum(showBlogs(blogTypeList[1], blogList), 1 , 1)[0],
                         s3_blog_3: sortBLogNum(showBlogs(blogTypeList[1], blogList), 2 , 1)[0],
                         s3_blog_4: sortBLogNum(showBlogs(blogTypeList[1], blogList), 3 , 1)[0],
+                        description: '這是咖啡分享部落格, 我是一位喜愛咖啡,也喜歡交流分享的咖啡師。 從咖啡知識到咖啡店經營管理,這是個有味道的部落格。',
+                        keywords: '咖啡',
+                        og_title: 'Coffee space',
+                        og_content: '這是咖啡分享部落格, 我是一位喜愛咖啡,也喜歡交流分享的咖啡師。 從咖啡知識到咖啡店經營管理,這是個有味道的部落格。',
+                        og_url: 'https://afternoon-cliffs-31145.herokuapp.com/',
+                        og_image: theTopBlog ().blog_image1_dsp
                       } )
 })
 app.get('/contact', (req, res) => {
@@ -65,7 +71,13 @@ app.get('/:id', (req, res) => {
       res.render('article', { blog_title: blog.blog_title,
         blog_date: blog.blog_online_dsp,
         blog_image1: blog.blog_image1_dsp,
-        blog_content1: blog.blog_content1
+        blog_content1: blog.blog_content1,
+        description: blog.blog_content1,
+        keywords: blog.blog_keyword,
+        og_title: blog.blog_title,
+        og_content: blog.blog_content1,
+        og_url: 'https://afternoon-cliffs-31145.herokuapp.com/' + req.params.id,
+        og_image: blog.blog_image1_dsp,
     })
 
 
@@ -193,7 +205,7 @@ axios //取得部落格類型列表
 axios
   .get(BLOG_LIST)
   .then((res) => {
-    console.log(res)
+    console.log(res.data.msg.original.lists)
   })
 
 
