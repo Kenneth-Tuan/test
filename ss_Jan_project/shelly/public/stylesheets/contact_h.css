@@ -64,6 +64,8 @@
 .input-name-contact, .input-email-contact, .input-phone-contact {
     width: 300px;
     height: 50px;
+    font-size: 30px;
+    padding-left: 20px;
 
     border: 2px solid #637081;
     box-sizing: border-box;
@@ -72,17 +74,26 @@
 
 }
 
-
-
 .input-question-contact {
+    display: inline;
     width: 300px;
     height: 120px;
+    font-size: 30px;
+    padding: 20px;
+    vertical-align: top;
+    resize: vertical;
 
     border: 2px solid #637081;
     box-sizing: border-box;
     border-radius: 30px;
     background-color: #fffbf0;
 
+}
+input::-webkit-input-placeholder {
+    color: lightgrey;
+}
+textarea::-webkit-input-placeholder {
+    color: lightgrey;
 }
 
 .btn-send-contact {

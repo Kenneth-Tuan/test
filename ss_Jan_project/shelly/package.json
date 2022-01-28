@@ -16,5 +16,9 @@
     "express-handlebars": "^3.0.0",
     "jquery": "^3.6.0",
     "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "handlebars-loader": "^1.7.1",
+    "handlebars-webpack-plugin": "^2.2.1"
   }
 }

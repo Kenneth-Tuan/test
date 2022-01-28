@@ -1,10 +1,10 @@
 const express = require('express')
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const axios = require('axios')
 const bodyParser = require('body-parser')
 // const routes = require('./routes')
 
-require('./config/mongoose')
+// require('./config/mongoose')
 
 const PORT = process.env.PORT || 3000
 const app = express()

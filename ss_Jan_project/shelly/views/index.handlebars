@@ -62,7 +62,9 @@
                                         <div class="card-tag-index"><p>{{ this.blog_type_title }}</p></div>
                                         <div class="change-index">
                                             <div class="card-detail-index">
-                                                <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                                <a href="/about">
+                                                    <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>    
+                                                </a>
                                                 <h3 class="title-index">coffee space ‧</h3>
                                                 <h3 class="card-date-index">{{ this.blog_online_dsp}}</h3>
                                             </div>
@@ -189,3 +191,18 @@
                     
                 </div>
         </section> 
+
+        <script>
+            myID = document.getElementById("a3-index");
+
+            var myScrollFunc = function () {
+                var y = window.scrollY;
+                if (y >= 800) {
+                    myID.className = "a3-index show"
+                } else {
+                    myID.className = "a3-index hide"
+                }
+            };
+
+            window.addEventListener("scroll", myScrollFunc);
+        </script>
