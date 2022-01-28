@@ -1,0 +1,208 @@
+        <section id="a1-index">
+                <div class="banner-wrapper-index"> 
+                    <a href="/{{ the_top_blog.blog_id }}">
+                        <div class="main-banner-index background-img" style="background-image: linear-gradient(360deg, rgba(38, 24, 10, 0.95) 19.67%, rgba(0, 0, 0, 0) 107.39%), url('{{ the_top_blog.blog_image1_dsp }}');">
+                            <div class="banner-tag-index"><p>{{ the_top_blog.blog_type_title }}</p></div>
+                            <h3 class="banner-title-index">{{ the_top_blog.blog_title }}</h3>
+                            <div class="banner-text-index">
+                                <p class="brand-index">coffee space ‧</p>
+                                <p class="banner-date-index">{{ the_top_blog.blog_online_dsp }}</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="sub-banner-index">
+                        <a href="/about"><div class="sub-banner-avatar-index"><img src="/img/avatar.png" alt=""></div></a>
+                        <h3 class="sub-banner-title-index">嗨!<br>
+                            這裡是Coffee Space Blog</h3>
+                        <div class="sub-banner-description-index">分享咖啡沖煮心得，相關知識，<br>
+                            歡迎咖啡的愛好者分享與討論。</div>
+                    </div>
+
+                </div>  
+        </section>
+
+        <section id="a2-index">
+                <div class="koc-wrapper-index">
+
+                    <h2 class="sub-title-index">{{ blog_type_1 }}</h2>
+                    <div class="horizon1-index"></div>
+
+                    <div class="p1-1440-change-index">
+                        {{!-- /*leftBlog*/ --}}
+                        <div class="card-n-index card-n-1440-index">
+                            <a href="/{{ s2_leftBlog.blog_id }}">
+                                <div class="card-n-img-index" style="background-image: url('{{ s2_leftBlog.blog_image1_dsp }}');"></div>                                
+                            </a>
+
+                            <div class="card-text-index">
+                                <div class="card-tag-index"><p>{{ s2_leftBlog.blog_type_title }}</p></div>
+                                <div class="change-index">
+                                    <div class="card-detail-index">
+                                        <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-index">coffee space ‧</h3>
+                                        <h3 class="card-date-index">{{ s2_leftBlog.blog_online_dsp }}</h3>
+                                    </div>
+                                    <a href="/{{ s2_leftBlog.blog_id }}">
+                                        <h2 class="card-title-index">{{ s2_leftBlog.blog_title }}</h2>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p1-1440-aside-index">
+                        {{!-- /*rightBlogs*/ --}}
+                            {{#each s2_rightBlogs}}
+                                <div class="card-n-index">
+                                    <a href="/{{ this.blog_id }}">
+                                        <div class="card-n-img-index" style="background-image: url('{{ this.blog_image1_dsp }}');"></div>                                        
+                                    </a>
+
+                                    <div class="card-text-index">
+                                        <div class="card-tag-index"><p>{{ this.blog_type_title }}</p></div>
+                                        <div class="change-index">
+                                            <div class="card-detail-index">
+                                                <a href="/about">
+                                                    <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>    
+                                                </a>
+                                                <h3 class="title-index">coffee space ‧</h3>
+                                                <h3 class="card-date-index">{{ this.blog_online_dsp}}</h3>
+                                            </div>
+                                            <a href="/{{ this.blog_id }}">
+                                                <h2 class="card-title-index">{{ this.blog_title }}</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>  
+
+                    </div>
+
+                </div>
+        </section>
+
+        <section id="a3-index">
+                <div class="wcs-wrapper-index">
+                    <h2 class="sub-title-index">{{ blog_type_2 }}</h2>
+                    <div class="horizon1-index"></div>
+
+                    <div class="change-index">
+                        <div class="card-n-index">
+                            <a href="/{{ s3_blog_1.blog_id }}">
+                                <div class="card-n-img-index" style="background-image: url('{{ s3_blog_1.blog_image1_dsp }}');"></div>                                
+                            </a>
+
+                            <div class="card-text-index">
+                                <div class="card-tag-index"><p>{{ s3_blog_1.blog_type_title }}</p></div>
+                                <div class="change-index">
+                                    <div class="card-detail-index">
+                                        <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-index">coffee space ‧</h3>
+                                        <h3 class="card-date-index">{{ s3_blog_1.blog_online_dsp }}</h3>
+                                    </div>
+                                    <a href="/{{ s3_blog_1.blog_id }}">
+                                        <h2 class="card-title-index">{{ s3_blog_1.blog_title }}</h2>
+                                    </a>
+                                </div>
+                                <div class="card-content-index"><h6>{{ s3_blog_1.blog_content1 }}</h6></div>
+                            </div>
+                        </div>
+
+                        <div class="hr-index"></div>
+
+
+                        <div class="card-n-index">
+                            <a href="/{{ s3_blog_2.blog_id }}">
+                                <div class="card-n-img-index" style="background-image: url('{{ s3_blog_2.blog_image1_dsp }}');"></div>
+                            </a>
+
+                            <div class="card-text-index">
+                                <div class="card-tag-index"><p>{{ s3_blog_2.blog_type_title }}</p></div>
+                                <div class="change-index">
+                                    <div class="card-detail-index">
+                                        <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-index">coffee space ‧</h3>
+                                        <h3 class="card-date-index">{{ s3_blog_2.blog_online_dsp }}</h3>
+                                    </div>
+                                    <a href="/{{ s3_blog_2.blog_id }}">
+                                        <h2 class="card-title-index">{{ s3_blog_2.blog_title }}</h2>
+                                    </a>
+                                </div>
+                                <div class="card-content-index"><h6>{{ s3_blog_2.blog_content1 }}</h6></div>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                </div>
+        </section>
+
+        <section id="a4-index">
+                <div class="wcs-wrapper-index">
+                    <h2 class="sub-title-index">{{ blog_type_2 }}</h2>
+                    <div class="horizon1-index"></div>
+
+                    <div class="change-index">
+                        <div class="card-n-index">
+                            <a href="/{{ s3_blog_3.blog_id }}">
+                              <div class="card-n-img-index" style="background-image: url('{{ s3_blog_3.blog_image1_dsp }}');"></div>                  
+                            </a>
+
+                            <div class="card-text-index">
+                                <div class="card-tag-index"><p>{{ s3_blog_3.blog_type_title }}</p></div>
+                                <div class="change-index">
+                                    <div class="card-detail-index">
+                                        <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-index">coffee space ‧</h3>
+                                        <h3 class="card-date-index">{{ s3_blog_3.blog_online_dsp }}</h3>
+                                    </div>
+                                    <a href="/{{ s3_blog_3.blog_id }}">
+                                       <h2 class="card-title-index">{{ s3_blog_3.blog_title }}</h2>
+                                    </a>
+                                </div>
+                                <div class="card-content-index"><h6>{{ s3_blog_3.blog_content1 }}</h6></div>
+                            </div>
+                        </div>  
+
+                        <div class="hr-index"></div>
+
+
+                        <div class="card-n-index">
+                            <a href="/{{ s3_blog_4.blog_id }}">
+                                <div class="card-n-img-index" style="background-image: url('{{ s3_blog_4.blog_image1_dsp }}');"></div>                            
+                            </a>
+
+                            <div class="card-text-index">
+                                <div class="card-tag-index"><p>{{ s3_blog_4.blog_type_title }}</p></div>
+                                <div class="change-index">
+                                    <div class="card-detail-index">
+                                        <div class="avatar-index"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-index">coffee space ‧</h3>
+                                        <h3 class="card-date-index">{{ s3_blog_4.blog_online_dasp }}</h3>
+                                    </div>
+                                    <a href="/{{ s3_blog_4.blog_id }}">
+                                        <h2 class="card-title-index">{{ s3_blog_4.blog_title }}</h2>
+                                    </a>
+                                </div>
+                                <div class="card-content-index"><h6>{{ s3_blog_4.blog_content1 }}</h6></div>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                </div>
+        </section> 
+
+        <script>
+            myID = document.getElementById("a3-index");
+
+            var myScrollFunc = function () {
+                var y = window.scrollY;
+                if (y >= 800) {
+                    myID.className = "a3-index show"
+                } else {
+                    myID.className = "a3-index hide"
+                }
+            };
+
+            window.addEventListener("scroll", myScrollFunc);
+        </script>

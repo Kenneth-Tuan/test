@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFE SPACE</title>
+
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_content }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ og_url }}" />
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:image" content="{{ og_image }}">
+
+    <link rel="icon" href="/img/avatar_sm.png">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/article_h.css">
+    <link rel="stylesheet" href="/stylesheets/articleList_h.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="/stylesheets/contact_h.css">
+    <link rel="stylesheet" href="/stylesheets/popper.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./icofont/icofont.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Kaushan+Script&family=Kite+One&family=Luckiest+Guy&family=Noto+Sans&family=Noto+Sans+TC:wght@400;700&family=Oleo+Script&family=Philosopher&family=Sriracha&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <div class="a333">
+        <header>
+            <div class="header">
+                <div class="title">
+                    <i class="icon icofont-coffee-alt"></i>
+                    <h1 class="brand">COFFE SPACE</h1>
+                    <button class="contact-us-h">聯絡我<i class="icofont-long-arrow-right"></i></button>
+                    <button class="articles-h">看全部文章</button>
+                </div>
+                <ul class="socialMediaIcons">
+                    <li class="icon i-fb"><a class="social-media-link" href="https://reurl.cc/mvWlYV"><i
+                                class="icofont lab la-facebook-f"></i></a></li>
+                    <li class="icon i-ig"><a class="social-media-link"
+                            href="https://www.instagram.com/coffee_space_2021/    "><i
+                                class="icofont icofont-instagram"></i></a></li>
+                    <li class="icon i-yt"><a class="social-media-link"
+                            href="https://www.youtube.com/user/oasis7968/featured"><i
+                                class="icofont icofont-youtube"></i></a></li>
+                </ul>
+            </div>
+
+        </header>
+
+        {{{ body }}}
+
+        <footer class="footer-375">
+            
+            <button class="contact-us">聯絡我<i class="icofont-long-arrow-right"></i></button>
+            <button class="articles">看全部文章</button>
+            <div class="horizon2"></div>
+            <button class="go-top" id="backtoTop" onclick="scrollToTop();return false;"href="#"><i class="icofont-arrow-up"></i></button>
+                <ul class="socialMediaIcons">
+                    <li class="icon i-fb"><a class="social-media-link" href="https://reurl.cc/mvWlYV"><i
+                                class="icofont lab la-facebook-f"></i></a></li>
+                    <li class="icon i-ig"><a class="social-media-link"
+                            href="https://www.instagram.com/coffee_space_2021/    "><i
+                                class="icofont icofont-instagram"></i></a></li>
+                    <li class="icon i-yt"><a class="social-media-link"
+                            href="https://www.youtube.com/user/oasis7968/featured"><i
+                                class="icofont icofont-youtube"></i></a></li>
+                </ul>
+            <p>Copyright@ 2021 Coffeespace All right reserved.</p>
+        </footer>
+
+        <footer class="footer-768">
+            <div class="up">
+                <button class="articles">看全部文章</button>
+                <button class="go-top" id="backtoTop" onclick="scrollToTop();return false;"href="#"><i class="icofont-arrow-up"></i></button>
+            </div>
+            <div class="down">
+                <div class="down_1">
+                    <p>Copyright@ 2021 Coffeespace All right reserved.</p>
+                    <button class="contact-us">聯絡我<i class="icofont-long-arrow-right"></i></button>
+                </div>
+                <ul class="socialMediaIcons">
+                    <li class="icon i-fb"><a class="social-media-link" href="https://reurl.cc/mvWlYV"><i
+                                class="icofont lab la-facebook-f"></i></a></li>
+                    <li class="icon i-ig"><a class="social-media-link"
+                            href="https://www.instagram.com/coffee_space_2021/    "><i
+                                class="icofont icofont-instagram"></i></a></li>
+                    <li class="icon i-yt"><a class="social-media-link"
+                            href="https://www.youtube.com/user/oasis7968/featured"><i
+                                class="icofont icofont-youtube"></i></a></li>
+                </ul>
+            </div>
+
+        </footer>
+        <div class="a81"></div>
+
+        {{!-- <script src="/jquery/jquery.js"></script> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+        {{!-- <script src="/javascripts/index.js"></script> --}}
+
+
+        <script>
+            document.querySelectorAll('button').forEach
+                (btn => {
+                    btn.addEventListener('click', function onContactBtn(event) {
+                        let target = event.target
+
+                        if (target.matches('.contact-us')) {
+                            location.href = "/contact"
+                        }
+                        if (target.matches('.contact-us-h')) {
+                            location.href = "/contact"
+                        }
+                        if (target.matches('.articles')) {
+                            location.href = "/blog_list"
+                        }
+                        if (target.matches('.articles-h')) {
+                            location.href = "/blog_list"
+                        }
+                    })
+                }
+                )
+
+
+            document.querySelector('.title').addEventListener('click', event => {
+                let target = event.target
+                if (target.matches('.icon, .brand')) {
+                    location.href = "/"
+                }
+            })
+
+            function scrollToTop(){
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

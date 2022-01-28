@@ -1,0 +1,31 @@
+        <section id="a1-blogList">
+                <div class="banner-wrapper-blogList"> 
+
+                    <p class="current-page-blogList">文章總覽</p>
+                    <p class="path-blogList">首頁/文章總覽</p>
+
+            </div>
+        </section>
+
+        <section id="a2-blogList">
+                <div class="articleList-wrapper-blogList">
+
+                    {{#each blogs}}
+                        <div class="card-n-blogList">
+                            <a href="/{{ this.blog_id }}">
+                                <div class="card-n-img-blogList" style="background-image: url('{{ this.blog_image1_dsp }}');"></div>                              
+                            </a>
+                            <div class="card-text-blogList">
+                                <p class="card-tag-blogList">{{ this.blog_type_title }}</p>
+                                <div class="change-blogList">
+                                    <div class="card-detail-blogList">
+                                        <div class="avatar-blogList"><img src="/img/avatar_sm.png" alt=""></div>
+                                        <h3 class="title-blogList">coffee space ‧</h3>
+                                        <h3 class="card-date-blogList">{{ this.blog_online_dsp }}</h3>
+                                    </div>
+                                    <h2 class="card-title-blogList">{{ this.blog_title }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+        </section>

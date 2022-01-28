@@ -1,0 +1,62 @@
+       <section id="a1-contact">
+            <div class="container-n-contact">
+                <div class="banner-wrapper-contact"> 
+
+                    <p class="current-page-contact">洽詢表單</p>
+                    <p class="path-contact">首頁/個人介紹</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="a2-contact">
+                <div class="p5-s2-contact">
+                    <form action="/contact" class="" method="POST">
+                        <div class="form-input-name-contact">
+                            <h3 class="name-contact" for="input-name-contact">姓名*</h3>
+                            <input type="text" name="name" value="" class="input-name-contact" placeholder="Name">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-email-contact">
+                            <h3 class="email-contact" for="input-email-contact">Email*</h3>
+                            <input type="email" name="email" value="" class="input-email-contact" placeholder="Email">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-phone-contact">
+                            <h3 class="phone-contact" for="input-phone-contact">電話*</h3>
+                            <input type="number" name="phone" value="" class="input-phone-contact" placeholder="Phone">
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <div class="form-input-question-contact">
+                            <h3 class="question-contact" for="input-question-contact">洽詢内容*</h3>
+                            <textarea type="text" name="question" value="" class="input-question-contact" placeholder="Your message here..."></textarea>
+                            <div class="alert"><span>必填</span></div>
+
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="submit" class="btn-send-contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <h3 class="send-contact">送出<i class="icofont-paper-plane"></i></h3>
+                        </button>                            
+                    </form>
+
+            
+                </div>
+        </section>
+                <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal">
+                    <div class="modal-body">
+                        <i class="icofont-tick-mark"></i>
+                        <h3 class="modal-message">已成功送出洽詢表單!</h3>
+                        <button class="articleList-contact" onclick="javascript:location.href='/blog_list'"><h4 class="articleList-content-contact">看全部文章</h4></button>
+                        <button class="back-to-frontPage-contact" onclick="javascript:location.href='/'"><h4 class="back-to-frontPage-content-contact">回首頁</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/javascripts/contact.js"></script>
