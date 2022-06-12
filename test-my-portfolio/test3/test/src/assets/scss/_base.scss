@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;700&family=Roboto&display=swap');
+@mixin font-setting($family, $style, $weight, $size, $height, $color) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+@mixin text-rows($rows) {
+    overflow: hidden;
+    word-break: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rows;
+    -webkit-box-orient: vertical;
+}
+%input-style {
+  box-sizing: border-box;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  font-size: 16px; 
+  padding: 8px;
+  &:hover, &:focus {
+    border-color: rgba(128, 128, 128, 0.479);
+  }
+  background-color: #FFFFFF;
+}
+.scrollbar {
+    padding-left: 6px;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, .1);
+    }
+}
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
